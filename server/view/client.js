@@ -31,27 +31,27 @@ const onSquareClicked = song => {
     for (let i = 0; i < colors.length; i++) {
       if (i == 0) {
         var x = document.getElementById("audio1");
-        x.setAttribute("src", "https://people.rit.edu/lgs9654/audioFiles/knock.wav");
+        x.setAttribute("src", "https://mysound.cad.rit.edu/audioFiles/knock.wav");
         colors[i].addEventListener("click", beat1);
       }
       if (i == 1) {
         var x = document.getElementById("audio2");
-        x.setAttribute("src", "https://people.rit.edu/lgs9654/audioFiles/cork.mp3");
+        x.setAttribute("src", "https://mysound.cad.rit.edu/audioFiles/cork.mp3");
         colors[i].addEventListener("click", beat2);
       }
       if (i == 2) {
         var x = document.getElementById("audio3");
-        x.setAttribute("src", "https://people.rit.edu/lgs9654/audioFiles/coins.wav");
+        x.setAttribute("src", "https://mysound.cad.rit.edu/audioFiles/coins.wav");
         colors[i].addEventListener("click", beat3);
       }
       if (i == 3) {
         var x = document.getElementById("audio4");
-        x.setAttribute("src", "https://people.rit.edu/lgs9654/audioFiles/keys.wav");
+        x.setAttribute("src", "https://mysound.cad.rit.edu/audioFiles/keys.wav");
         colors[i].addEventListener("click", beat4);
       }
       if (i == 4) {
         var x = document.getElementById("audio5");
-        x.setAttribute("src", "https://people.rit.edu/lgs9654/audioFiles/laugh.wav");
+        x.setAttribute("src", "https://mysound.cad.rit.edu/audioFiles/laugh.wav");
         colors[i].addEventListener("click", beat5);
       }
     }
