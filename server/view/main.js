@@ -4,7 +4,7 @@
   const socket = io();
   const canvas = document.getElementsByClassName("display")[0];
   const boardOne = document.getElementsByClassName("boardOne")[0];
-  const colors = document.getElementsByClassName("color");
+  const colors = document.getElementsByTagName("video");
   const context = canvas.getContext("2d");
 
   const current = {

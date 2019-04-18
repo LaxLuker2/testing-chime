@@ -1,23 +1,112 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Socket.IO whiteboard</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Socket.IO whiteboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <!--<canvas class="boardTwo" ></canvas>-->
+  <body>
+    <canvas class="display hidden"></canvas>
+    <canvas class="boardOne"></canvas>
 
-  <div class="colors">
-    <div class="color black"></div>
-    <div class="color red"></div>
-    <div class="color green"></div>
-    <div class="color blue"></div>
-    <div class="color yellow"></div>
-  </div>
-
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/main.js"></script>
-</body>
+    <div class="blueRect-mid">
+      <img src="assets/Rectangle.svg" />
+    </div>
+    <div class="yellowRect-mid">
+      <img src="assets/Rectangle1.svg" />
+    </div>
+    <div class="greenRect-mid">
+      <img src="assets/Rectangle2.svg" />
+    </div>
+    <div class="redRect-mid">
+      <img src="assets/Rectangle3.svg" />
+    </div>
+    <div class="videos">
+      <video id="v1-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim1.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v2-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim2.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v3-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim3.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v4-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim4.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v5-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim5.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v6-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim7.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v7-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim8.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v8-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim9.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v9-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim10.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v10-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim6.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v11-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim11.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v12-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim12.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v13-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim13.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v14-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim14.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v15-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim15.mp4"
+        type=video/mp4>
+      </video>
+      <video id="v16-mid" width="350" height="240" onclick="this.play()">
+        <source
+        src="https://mysound.cad.rit.edu/exhibit/animations/buttons/anim16.mp4"
+        type=video/mp4>
+      </video>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+    <script src="boardTwo.js"></script>
+  </body>
 </html>

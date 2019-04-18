@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Socket.IO whiteboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body id="welcomeBody">
+    <div id="thankyouImage">
+      <img src="assets/thankyouImage.svg" />
+    </div>
+    <div id="thankyouHeader">
+      <h1>You just created magic!!</h1>
+    </div>
+
+    <div id="thankyouText">
+      <p>
+        The number above is your song ID. You can use this to find your song to
+        share & download on our website. Grab a physical token with more info on
+        your way out from an exit counter.
+      </p>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="confirmationPage.js"></script>
+  </body>
+</html>

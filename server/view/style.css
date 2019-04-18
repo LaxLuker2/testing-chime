@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:400,700");
 
 /**
  * Fix user-agent
@@ -7,10 +8,98 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #303030;
+}
+
+/* welcome Page */
+#albumImg {
+  margin: 0 auto;
+}
+#welcomeBody {
+  background-color: black;
+}
+#welcomeText {
+  position: absolute;
+  /* width: 1360px; */
+  /*height: 193px;
+  left: 280px;*/
+  margin: 0 auto;
+  top: 515px;
+  padding: 0px 200px;
+
+  font-family: "Work Sans";
+  font-size: 44px;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: 0.25px;
+
+  color: #f5f1f1;
+}
+#welcomeStartButton {
+  width: 400px;
+  font-family: "Work Sans";
+  font-size: 44px;
+  color: #f5f1f1;
+  position: absolute;
+  left: 37.66%;
+  right: 37.6%;
+  /* top: 81.48%;
+  bottom: 10.19%; */
+  top: 83.48%;
+  bottom: 8.19%;
+
+  /* orang-purp */
+  background: linear-gradient(180deg, #f136ee 0%, #fb5154 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 0px;
+  border-radius: 100px;
+}
+
+/* thank you page */
+#thankyouImage {
+  margin: 0 auto;
+  position: absolute;
+  width: 640.35px;
+  height: 408.79px;
+  left: 640px;
+  top: 139px;
+}
+#thankyouHeader {
+  position: absolute;
+  width: 1172px;
+  height: 54px;
+  left: 374px;
+  top: 617px;
+  margin: 0 auto;
+
+  font-family: "Work Sans";
+  font-size: 30px;
+  line-height: 70px;
+  text-align: center;
+  letter-spacing: 0.25px;
+
+  color: #ffcc00;
+}
+#thankyouText {
+  position: absolute;
+  width: 1360px;
+  height: 193px;
+  left: 280px;
+  top: 721px;
+  margin: 0 auto;
+
+  font-family: "Work Sans";
+  font-size: 35px;
+  line-height: 70px;
+  text-align: center;
+  letter-spacing: 0.25px;
+
+  color: #f5f1f1;
 }
 
 /**
@@ -36,8 +125,8 @@ html, body {
   top: 0;
 }
 
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
 
 .colors {
@@ -50,8 +139,352 @@ html, body {
   width: 48px;
 }
 
-.color.black { background-color: black; }
-.color.red { background-color: red; }
-.color.green { background-color: green; }
-.color.blue { background-color: blue; }
-.color.yellow { background-color: yellow; }
+.color.black {
+  background-color: black;
+}
+.color.red {
+  background-color: red;
+}
+.color.green {
+  background-color: green;
+}
+.color.blue {
+  background-color: blue;
+}
+.color.yellow {
+  background-color: yellow;
+}
+
+/* background music */
+#my_audio {
+  visibility: hidden;
+}
+
+/* board One */
+#v1 {
+  position: absolute;
+  left: 290px;
+  top: 30px;
+}
+#v2 {
+  position: absolute;
+  left: 670px;
+  top: 30px;
+}
+#v3 {
+  position: absolute;
+  left: 290px;
+  top: 280px;
+}
+#v4 {
+  position: absolute;
+  left: 670px;
+  top: 280px;
+}
+#v5 {
+  position: absolute;
+  left: 290px;
+  top: 580px;
+}
+#v6 {
+  position: absolute;
+  left: 670px;
+  top: 580px;
+}
+#v7 {
+  position: absolute;
+  left: 290px;
+  top: 830px;
+}
+#v8 {
+  position: absolute;
+  left: 670px;
+  top: 830px;
+}
+#v9 {
+  position: absolute;
+  left: 1090px;
+  top: 30px;
+}
+#v10 {
+  position: absolute;
+  left: 1460px;
+  top: 30px;
+}
+#v11 {
+  position: absolute;
+  left: 1090px;
+  top: 280px;
+}
+#v12 {
+  position: absolute;
+  left: 1460px;
+  top: 280px;
+}
+#v13 {
+  position: absolute;
+  left: 1090px;
+  top: 580px;
+}
+#v14 {
+  position: absolute;
+  left: 1460px;
+  top: 580px;
+}
+#v15 {
+  position: absolute;
+  left: 1090px;
+  top: 830px;
+}
+#v16 {
+  position: absolute;
+  left: 1460px;
+  top: 830px;
+}
+
+.ChimeLogo {
+  position: absolute;
+  left: 50px;
+  top: 430px;
+}
+
+.blueRect {
+  position: absolute;
+  left: 250px;
+  top: 10px;
+}
+
+.yellowRect {
+  position: absolute;
+  left: 250px;
+  top: 540px;
+}
+.greenRect {
+  position: absolute;
+  left: 1050px;
+  top: 10px;
+}
+.redRect {
+  position: absolute;
+  left: 1050px;
+  top: 540px;
+}
+
+/* board two */
+#v1-mid {
+  position: absolute;
+  left: 175px; /*290  (230 difference)*/
+  top: 30px;
+}
+#v2-mid {
+  position: absolute;
+  left: 555px; /*670*/
+  top: 30px;
+}
+#v3-mid {
+  position: absolute;
+  left: 175px;
+  top: 280px;
+}
+#v4-mid {
+  position: absolute;
+  left: 555px;
+  top: 280px;
+}
+#v5-mid {
+  position: absolute;
+  left: 175px;
+  top: 580px;
+}
+#v6-mid {
+  position: absolute;
+  left: 555px;
+  top: 580px;
+}
+#v7-mid {
+  position: absolute;
+  left: 175px;
+  top: 830px;
+}
+#v8-mid {
+  position: absolute;
+  left: 555px;
+  top: 830px;
+}
+#v9-mid {
+  position: absolute;
+  left: 975px;
+  top: 30px;
+}
+#v10-mid {
+  position: absolute;
+  left: 1345px;
+  top: 30px;
+}
+#v11-mid {
+  position: absolute;
+  left: 975px;
+  top: 280px;
+}
+#v12-mid {
+  position: absolute;
+  left: 1345px;
+  top: 280px;
+}
+#v13-mid {
+  position: absolute;
+  left: 975px;
+  top: 580px;
+}
+#v14-mid {
+  position: absolute;
+  left: 1345px;
+  top: 580px;
+}
+#v15-mid {
+  position: absolute;
+  left: 975px;
+  top: 830px;
+}
+#v16-mid {
+  position: absolute;
+  left: 1345px;
+  top: 830px;
+}
+
+.blueRect-mid {
+  position: absolute;
+  left: 135px; /* 250  115 20*/
+  top: 10px;
+}
+
+.yellowRect-mid {
+  position: absolute;
+  left: 135px;
+  top: 540px;
+}
+.greenRect-mid {
+  position: absolute;
+  left: 935px;
+  top: 10px;
+}
+.redRect-mid {
+  position: absolute;
+  left: 935px; /* 1050 */
+  top: 540px;
+}
+
+/* board three */
+#v1-right {
+  position: absolute;
+  left: 60px; /*290*/
+  top: 30px;
+}
+#v2-right {
+  position: absolute;
+  left: 440px; /*670*/
+  top: 30px;
+}
+#v3-right {
+  position: absolute;
+  left: 60px;
+  top: 280px;
+}
+#v4-right {
+  position: absolute;
+  left: 440px;
+  top: 280px;
+}
+#v5-right {
+  position: absolute;
+  left: 60px;
+  top: 580px;
+}
+#v6-right {
+  position: absolute;
+  left: 440px;
+  top: 580px;
+}
+#v7-right {
+  position: absolute;
+  left: 60px;
+  top: 830px;
+}
+#v8-right {
+  position: absolute;
+  left: 440px;
+  top: 830px;
+}
+#v9-right {
+  position: absolute;
+  left: 860px;
+  top: 30px;
+}
+#v10-right {
+  position: absolute;
+  left: 1230px;
+  top: 30px;
+}
+#v11-right {
+  position: absolute;
+  left: 860px;
+  top: 280px;
+}
+#v12-right {
+  position: absolute;
+  left: 1230px;
+  top: 280px;
+}
+#v13-right {
+  position: absolute;
+  left: 860px;
+  top: 580px;
+}
+#v14-right {
+  position: absolute;
+  left: 1230px;
+  top: 580px;
+}
+#v15-right {
+  position: absolute;
+  left: 860px;
+  top: 830px;
+}
+#v16-right {
+  position: absolute;
+  left: 1230px;
+  top: 830px;
+}
+
+.Lines-right {
+  position: absolute;
+  left: 1750px;
+}
+
+.ChimeLogo-right {
+  position: absolute;
+  left: 1775px;
+  top: 430px;
+  transform: rotate(180deg);
+}
+.blueRect-right {
+  position: absolute;
+  left: 20px; /*250*/
+  top: 10px;
+}
+
+.yellowRect-right {
+  position: absolute;
+  left: 20px;
+  top: 540px;
+}
+.greenRect-right {
+  position: absolute;
+  left: 820px;
+  top: 10px;
+}
+.redRect-right {
+  position: absolute;
+  left: 820px; /* 1050 */
+  top: 540px;
+}
