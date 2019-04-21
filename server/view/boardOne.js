@@ -5,6 +5,16 @@ let songFinishedBoardCheck;
 
 // background music
 window.onload = function() {
+  console.log("welcome btn log1 : " + window.welcomeBtnClicked);
+  window.welcomeBtnClicked = false;
+
+  if (window.welcomeBtnClicked == false) {
+    window.welcomeBtnClicked = false;
+    document.getElementById("boardOneBody").style.visibility = "hidden";
+  } else {
+    window.welcomeBtnClicked = true;
+    document.getElementById("boardOneBody").style.visibility = "visible";
+  }
   // console.log(window.welcomeBtnClicked);
   // if (window.welcomeBtnClicked == false) {
   //   document.getElementById("boardOneBody").style.visibility = "hidden";
@@ -18,16 +28,12 @@ window.onload = function() {
     console.log("boardOne : " + welcomeBtnClicked);
     welcomeBtnClickedBoardCheck = welcomeBtnClicked;
     // socket.broadcast.emit("welcomeBtnClicked", welcomeBtnClicked);
-    if (
-      welcomeBtnClickedBoardCheck == false ||
-      window.welcomeBtnClicked == false
-    ) {
+    if (welcomeBtnClickedBoardCheck == false) {
       window.welcomeBtnClicked = false;
       document.getElementById("boardOneBody").style.visibility = "hidden";
     } else {
       window.welcomeBtnClicked = true;
       document.getElementById("boardOneBody").style.visibility = "visible";
-      document.getElementById("my_audio").play();
     }
   });
 
@@ -44,6 +50,8 @@ window.onload = function() {
         "http://testing-chime.herokuapp.com/thankyou?boardOne=true";
     }
   });
+
+  console.log("welcome btn log2 : " + window.welcomeBtnClicked);
 };
 
 //each audio element to play beat

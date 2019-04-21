@@ -18,6 +18,8 @@ const songEnded = () => {
     }
   });
 
+  // window.location.pathname = "/thankyou?boardTwo=true";
+
   window.location.href =
     "http://testing-chime.herokuapp.com/thankyou?boardTwo=true";
 };
