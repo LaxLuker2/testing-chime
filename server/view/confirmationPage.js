@@ -15,17 +15,14 @@ function countdown() {
     socket.emit("songFinished", songFinishedBoardCheck);
     console.log("timeout");
     clearInterval(myTimer);
+    console.log(urlParams);
     if (urlParams.get("boardOne") == true) {
       console.dir("one");
       window.location.pathname = "/boardOne";
-    }
-
-    if (urlParams.get("boardTwo") == true) {
+    } else if (urlParams.get("boardTwo") == true) {
       console.dir("two");
       window.location.pathname = "/welcome";
-    }
-
-    if (urlParams.get("boardThree") == true) {
+    } else if (urlParams.get("boardThree") == true) {
       console.dir("three");
       window.location.pathname = "/boardThree";
     }
