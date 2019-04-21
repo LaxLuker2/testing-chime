@@ -15,21 +15,21 @@ function countdown() {
     socket.emit("songFinished", songFinishedBoardCheck);
     console.log("timeout");
     clearInterval(myTimer);
-    console.log(urlParams.get("boardTwo"));
     if (urlParams.get("boardOne") == "true") {
-      console.dir("one");
       window.location.pathname = "/boardOne";
     } else if (urlParams.get("boardTwo") == "true") {
-      console.dir("two");
       window.location.pathname = "/welcome";
     } else if (urlParams.get("boardThree") == "true") {
-      console.dir("three");
       window.location.pathname = "/boardThree";
     }
   }
 }
 
-window.onload = myTimer;
+window.onload = function() {
+  window.welcomeBtnClicked = false;
+  window.songFinished = false;
+  myTimer;
+};
 
 // var myVar = setInterval(myTimer, 1000);
 

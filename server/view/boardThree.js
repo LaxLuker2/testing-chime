@@ -1,9 +1,9 @@
 const colors = document.getElementsByTagName(`video`);
-
 const socket = io();
 let welcomeBtnClickedBoardCheck;
 let songFinishedBoardCheck;
 
+//
 window.onload = function() {
   // console.log(window.welcomeBtnClicked);
   // if (window.welcomeBtnClicked == false) {
@@ -18,9 +18,14 @@ window.onload = function() {
     console.log("boardOne : " + welcomeBtnClicked);
     welcomeBtnClickedBoardCheck = welcomeBtnClicked;
     // socket.broadcast.emit("welcomeBtnClicked", welcomeBtnClicked);
-    if (welcomeBtnClickedBoardCheck == false) {
+    if (
+      welcomeBtnClickedBoardCheck == false ||
+      window.welcomeBtnClicked == false
+    ) {
+      window.welcomeBtnClicked = false;
       document.getElementById("boardThreeBody").style.visibility = "hidden";
     } else {
+      window.welcomeBtnClicked = true;
       document.getElementById("boardThreeBody").style.visibility = "visible";
     }
   });
@@ -30,10 +35,13 @@ window.onload = function() {
   socket.on("songFinished", function(songFinished) {
     console.log("boardThree song : " + songFinished);
     songFinishedBoardCheck = songFinished;
-    if (songFinishedBoardCheck == false) {
+    if (songFinishedBoardCheck == false || window.songFinished == false) {
+      window.songFinished = false;
     } else {
-      window.location.pathname =
-        "/thankyou?boardOne=false&boardTwo=false&boardThree=true";
+      // window.location.pathname = "/thankyou?boardThree=true";
+      window.songFinished = true;
+      window.location.href =
+        "http://testing-chime.herokuapp.com/thankyou?boardThree=true";
     }
   });
 };
