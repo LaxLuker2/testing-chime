@@ -11,6 +11,7 @@
   },
   "author": "Alexia Munoz, Luke Schwarting, Dito Wirastomo, Brendan Lee",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "jquery": "^3.3.1",
     "socket.io": "^2.2.0"

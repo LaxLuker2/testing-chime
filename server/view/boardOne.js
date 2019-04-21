@@ -1,39 +1,40 @@
 const colors = document.getElementsByTagName(`video`);
-const onSquareClicked = song => {
-  console.log("videos clicked");
-  console.log(song);
-  var audio = new Audio(song);
-  audio.play();
-};
-
-const beat1 = () => {
-  var src = $("#audio1").attr("src");
-  onSquareClicked(src);
-};
-const beat2 = () => {
-  var src = $("#audio2").attr("src");
-  onSquareClicked(src);
-};
-const beat3 = () => {
-  var src = $("#audio3").attr("src");
-  onSquareClicked(src);
-};
-const beat4 = () => {
-  var src = $("#audio4").attr("src");
-  onSquareClicked(src);
-};
-const beat5 = () => {
-  var src = $("#audio5").attr("src");
-  onSquareClicked(src);
-};
+const socket = io();
+let welcomeBtnClickedBoardCheck;
+let songFinishedBoardCheck;
 
 // background music
 window.onload = function() {
-  document.getElementById("my_audio").play();
-};
+  // console.log(window.welcomeBtnClicked);
+  // if (window.welcomeBtnClicked == false) {
+  //   document.getElementById("boardOneBody").style.visibility = "hidden";
+  // } else {
+  //   document.getElementById("boardOneBody").style.visibility = "visible";
+  //   document.getElementById("my_audio").play();
+  // }
+  socket.emit("welcomeBtnClicked");
+  socket.on("welcomeBtnClicked", function(welcomeBtnClicked) {
+    console.log("boardOne : " + welcomeBtnClicked);
+    welcomeBtnClickedBoardCheck = welcomeBtnClicked;
+    // socket.broadcast.emit("welcomeBtnClicked", welcomeBtnClicked);
+    if (welcomeBtnClickedBoardCheck == false) {
+      document.getElementById("boardOneBody").style.visibility = "hidden";
+    } else {
+      document.getElementById("boardOneBody").style.visibility = "visible";
+      document.getElementById("my_audio").play();
+    }
+  });
 
-const songEnded = () => {
-  window.location.pathname = "/thankyou";
+  socket.emit("songFinished");
+  socket.on("songFinished", function(songFinished) {
+    console.log("boardOne song : " + songFinished);
+    songFinishedBoardCheck = songFinished;
+    if (songFinishedBoardCheck == false) {
+    } else {
+      window.location.href =
+        "http://testing-chime.herokuapp.com/thankyou?boardOne=true";
+    }
+  });
 };
 
 //each audio element to play beat

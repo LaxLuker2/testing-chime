@@ -1,30 +1,25 @@
 const colors = document.getElementsByTagName(`video`);
-const onSquareClicked = song => {
-  console.log("videos clicked");
-  console.log(song);
-  var audio = new Audio(song);
-  audio.play();
+
+const socket = io();
+let songFinishedBoardCheck;
+
+window.onload = function() {
+  document.getElementById("my_audio").play();
 };
 
-const beat1 = () => {
-  var src = $("#audio1").attr("src");
-  onSquareClicked(src);
-};
-const beat2 = () => {
-  var src = $("#audio2").attr("src");
-  onSquareClicked(src);
-};
-const beat3 = () => {
-  var src = $("#audio3").attr("src");
-  onSquareClicked(src);
-};
-const beat4 = () => {
-  var src = $("#audio4").attr("src");
-  onSquareClicked(src);
-};
-const beat5 = () => {
-  var src = $("#audio5").attr("src");
-  onSquareClicked(src);
+const songEnded = () => {
+  let songEnded = true;
+  socket.emit("songFinished", songEnded);
+  socket.on("songFinished", function(songFinished) {
+    console.log("boardOne song : " + songFinished);
+    songFinishedBoardCheck = songFinished;
+    if (songFinishedBoardCheck == true) {
+      window.location.pathname = "/thankyou?boardTwo=true";
+    }
+  });
+
+  window.location.href =
+    "http://testing-chime.herokuapp.com/thankyou?boardTwo=true";
 };
 
 for (let i = 0; i < colors.length; i++) {

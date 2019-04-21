@@ -18,11 +18,34 @@
         celebrate the harmony in togetherness.
       </p>
     </div>
-    <form action="/boardOne" method="GET">
-      <button id="welcomeStartButton">Start</button>
+    <form action="/boardTwo" method="GET">
+      <button id="welcomeStartButton" onclick="welcomeBtnClick()">Start</button>
     </form>
 
     <script src="/socket.io/socket.io.js"></script>
     <!-- <script src="main.js"></script> -->
+    <script>
+      const socket = io();
+      let welcomeBtnClicked = false;
+      let songFinished = false;
+      window.onload = function() {
+        socket.emit("welcomeBtnClicked", welcomeBtnClicked);
+        socket.on("welcomeBtnClicked", function(welcomeBtnClick) {
+          console.log("welcomeBtnClick : " + welcomeBtnClick);
+        });
+        socket.emit("songFinished", songFinished);
+        socket.on("songFinished", function(songEnded) {
+          console.log("songEnded : " + songEnded);
+        });
+      };
+
+      const welcomeBtnClick = () => {
+        welcomeBtnClicked = true;
+        socket.emit("welcomeBtnClicked", welcomeBtnClicked);
+        socket.on("welcomeBtnClicked", function(welcomeBtnClick) {
+          console.log("welcomeBtnClicked : " + welcomeBtnClick);
+        });
+      };
+    </script>
   </body>
 </html>

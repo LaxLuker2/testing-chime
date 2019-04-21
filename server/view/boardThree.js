@@ -1,31 +1,46 @@
 const colors = document.getElementsByTagName(`video`);
-const onSquareClicked = song => {
-  console.log("videos clicked");
-  console.log(song);
-  var audio = new Audio(song);
-  audio.play();
+
+const socket = io();
+let welcomeBtnClickedBoardCheck;
+let songFinishedBoardCheck;
+
+window.onload = function() {
+  // console.log(window.welcomeBtnClicked);
+  // if (window.welcomeBtnClicked == false) {
+  //   document.getElementById("boardOneBody").style.visibility = "hidden";
+  // } else {
+  //   document.getElementById("boardOneBody").style.visibility = "visible";
+  //   document.getElementById("my_audio").play();
+  // }
+  //welcome button clicked
+  socket.emit("welcomeBtnClicked");
+  socket.on("welcomeBtnClicked", function(welcomeBtnClicked) {
+    console.log("boardOne : " + welcomeBtnClicked);
+    welcomeBtnClickedBoardCheck = welcomeBtnClicked;
+    // socket.broadcast.emit("welcomeBtnClicked", welcomeBtnClicked);
+    if (welcomeBtnClickedBoardCheck == false) {
+      document.getElementById("boardThreeBody").style.visibility = "hidden";
+    } else {
+      document.getElementById("boardThreeBody").style.visibility = "visible";
+    }
+  });
+
+  //music ended
+  socket.emit("songFinished");
+  socket.on("songFinished", function(songFinished) {
+    console.log("boardThree song : " + songFinished);
+    songFinishedBoardCheck = songFinished;
+    if (songFinishedBoardCheck == false) {
+    } else {
+      window.location.pathname =
+        "/thankyou?boardOne=false&boardTwo=false&boardThree=true";
+    }
+  });
 };
 
-const beat1 = () => {
-  var src = $("#audio1").attr("src");
-  onSquareClicked(src);
-};
-const beat2 = () => {
-  var src = $("#audio2").attr("src");
-  onSquareClicked(src);
-};
-const beat3 = () => {
-  var src = $("#audio3").attr("src");
-  onSquareClicked(src);
-};
-const beat4 = () => {
-  var src = $("#audio4").attr("src");
-  onSquareClicked(src);
-};
-const beat5 = () => {
-  var src = $("#audio5").attr("src");
-  onSquareClicked(src);
-};
+// if (window.SongEnded == true) {
+//   window.location.pathname = "/thankyou";
+// }
 
 for (let i = 0; i < colors.length; i++) {
   if (i == 0) {

@@ -1,10 +1,13 @@
 const express = require("express");
-
+const cors = require("cors");
 const app = express();
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
 
 const port = process.env.PORT || 3000;
+
+//cors
+app.use(cors());
 
 // routing
 app.use("/", express.static(`${__dirname}/view`));
@@ -20,6 +23,14 @@ app.use(
 function onConnection(socket) {
   // Updates Display
   socket.on("drawing", data => socket.broadcast.emit("drawing", data));
+  socket.on("welcomeBtnClicked", function(welcomeBtnClicked) {
+    console.log("welcomeBtnClicked " + welcomeBtnClicked);
+    socket.broadcast.emit("welcomeBtnClicked", welcomeBtnClicked);
+  });
+  socket.on("songFinished", function(songFinished) {
+    console.log("songFinished " + songFinished);
+    socket.broadcast.emit("songFinished", songFinished);
+  });
 }
 
 io.on("connection", onConnection);
