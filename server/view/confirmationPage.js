@@ -15,7 +15,7 @@ function countdown() {
     socket.emit("songFinished", songFinishedBoardCheck);
     console.log("timeout");
     clearInterval(myTimer);
-    console.log(urlParams);
+    console.log(urlParams.get("boardTwo"));
     if (urlParams.get("boardOne") == true) {
       console.dir("one");
       window.location.pathname = "/boardOne";
