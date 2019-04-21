@@ -27,7 +27,7 @@ window.onload = function() {
   socket.on("welcomeBtnClicked", function(welcomeBtnClicked) {
     console.log("boardOne : " + welcomeBtnClicked);
     welcomeBtnClickedBoardCheck = welcomeBtnClicked;
-    // socket.broadcast.emit("welcomeBtnClicked", welcomeBtnClicked);
+    console.log("welcome btn from sockets : " + welcomeBtnClicked);
     if (welcomeBtnClickedBoardCheck == false) {
       window.welcomeBtnClicked = false;
       document.getElementById("boardOneBody").style.visibility = "hidden";

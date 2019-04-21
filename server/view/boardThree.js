@@ -5,23 +5,25 @@ let songFinishedBoardCheck;
 
 //
 window.onload = function() {
-  // console.log(window.welcomeBtnClicked);
-  // if (window.welcomeBtnClicked == false) {
-  //   document.getElementById("boardOneBody").style.visibility = "hidden";
-  // } else {
-  //   document.getElementById("boardOneBody").style.visibility = "visible";
-  //   document.getElementById("my_audio").play();
-  // }
+  console.log("welcome btn log1 : " + window.welcomeBtnClicked);
+  window.welcomeBtnClicked = false;
+
+  if (window.welcomeBtnClicked == false) {
+    window.welcomeBtnClicked = false;
+    document.getElementById("boardThreeBody").style.visibility = "hidden";
+  } else {
+    window.welcomeBtnClicked = true;
+    document.getElementById("boardThreeBody").style.visibility = "visible";
+  }
+
   //welcome button clicked
   socket.emit("welcomeBtnClicked");
   socket.on("welcomeBtnClicked", function(welcomeBtnClicked) {
     console.log("boardOne : " + welcomeBtnClicked);
     welcomeBtnClickedBoardCheck = welcomeBtnClicked;
+    console.log("welcome btn from sockets : " + welcomeBtnClicked);
     // socket.broadcast.emit("welcomeBtnClicked", welcomeBtnClicked);
-    if (
-      welcomeBtnClickedBoardCheck == false ||
-      window.welcomeBtnClicked == false
-    ) {
+    if (welcomeBtnClickedBoardCheck == false) {
       window.welcomeBtnClicked = false;
       document.getElementById("boardThreeBody").style.visibility = "hidden";
     } else {
@@ -44,11 +46,9 @@ window.onload = function() {
         "http://testing-chime.herokuapp.com/thankyou?boardThree=true";
     }
   });
-};
 
-// if (window.SongEnded == true) {
-//   window.location.pathname = "/thankyou";
-// }
+  console.log("welcome btn log2 : " + window.welcomeBtnClicked);
+};
 
 for (let i = 0; i < colors.length; i++) {
   if (i == 0) {
