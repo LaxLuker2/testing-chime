@@ -11,17 +11,17 @@ const songEnded = () => {
   let songEnded = true;
   socket.emit("songFinished", songEnded);
   socket.on("songFinished", function(songFinished) {
-    console.log("boardOne song : " + songFinished);
+    console.log("boardtwo song : " + songFinished);
     songFinishedBoardCheck = songFinished;
     if (songFinishedBoardCheck == true) {
-      window.location.pathname = "/thankyou?boardTwo=true";
+      window.location.href = "/thankyou?boardTwo=true";
     }
   });
 
-  // window.location.pathname = "/thankyou?boardTwo=true";
+  window.location.href = "/thankyou?boardTwo=true";
 
-  window.location.href =
-    "http://testing-chime.herokuapp.com/thankyou?boardTwo=true";
+  // window.location.href =
+  //   "http://testing-chime.herokuapp.com/thankyou?boardTwo=true";
 };
 
 for (let i = 0; i < colors.length; i++) {

@@ -3,25 +3,8 @@ const socket = io();
 let welcomeBtnClickedBoardCheck;
 let songFinishedBoardCheck;
 
-// background music
+//
 window.onload = function() {
-  console.log("welcome window.btn log1 : " + window.welcomeBtnClicked);
-  // window.welcomeBtnClicked = false;
-
-  // if (window.welcomeBtnClicked == false) {
-  //   window.welcomeBtnClicked = false;
-  //   document.getElementById("boardOneBody").style.visibility = "hidden";
-  // } else {
-  //   window.welcomeBtnClicked = true;
-  //   document.getElementById("boardOneBody").style.visibility = "visible";
-  // }
-  // console.log(window.welcomeBtnClicked);
-  // if (window.welcomeBtnClicked == false) {
-  //   document.getElementById("boardOneBody").style.visibility = "hidden";
-  // } else {
-  //   document.getElementById("boardOneBody").style.visibility = "visible";
-  //   document.getElementById("my_audio").play();
-  // }
   //welcome btn pressed
   // socket.emit("welcomeBtnClicked");
   socket.on("welcomeBtnClicked", function(welcomeBtnClicked) {
@@ -41,13 +24,15 @@ window.onload = function() {
   socket.on("songFinished", function(songFinished) {
     console.log("boardOne song : " + songFinished);
     songFinishedBoardCheck = songFinished;
-    if (songFinishedBoardCheck == false || window.songFinished == false) {
-      window.songFinished = false;
+    if (songFinishedBoardCheck == false) {
+      //dont do anything
     } else {
-      // window.location.pathname = "/thankyou?boardone=true";
-      window.songFinished = true;
-      window.location.href =
-        "http://testing-chime.herokuapp.com/thankyou?boardOne=true";
+      // window.songFinished = true;
+      console.log("boardOne if song");
+      window.location.href = "/thankyou?boardOne=true";
+      // window.songFinished = true;
+      // window.location.href =
+      //   "http://testing-chime.herokuapp.com/thankyou?boardOne=true";
     }
   });
 
