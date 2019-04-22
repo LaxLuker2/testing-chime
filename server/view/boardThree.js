@@ -6,20 +6,20 @@ let songFinishedBoardCheck;
 //
 window.onload = function() {
   console.log("welcome btn log1 : " + window.welcomeBtnClicked);
-  window.welcomeBtnClicked = false;
+  // window.welcomeBtnClicked = false;
 
-  if (window.welcomeBtnClicked == false) {
-    window.welcomeBtnClicked = false;
-    document.getElementById("boardThreeBody").style.visibility = "hidden";
-  } else {
-    window.welcomeBtnClicked = true;
-    document.getElementById("boardThreeBody").style.visibility = "visible";
-  }
+  // if (window.welcomeBtnClicked == false) {
+  //   window.welcomeBtnClicked = false;
+  //   document.getElementById("boardThreeBody").style.visibility = "hidden";
+  // } else {
+  //   window.welcomeBtnClicked = true;
+  //   document.getElementById("boardThreeBody").style.visibility = "visible";
+  // }
 
   //welcome button clicked
-  socket.emit("welcomeBtnClicked");
+  // socket.emit("welcomeBtnClicked");
   socket.on("welcomeBtnClicked", function(welcomeBtnClicked) {
-    console.log("boardOne : " + welcomeBtnClicked);
+    console.log("boardThree : " + welcomeBtnClicked);
     welcomeBtnClickedBoardCheck = welcomeBtnClicked;
     console.log("welcome btn from sockets : " + welcomeBtnClicked);
     // socket.broadcast.emit("welcomeBtnClicked", welcomeBtnClicked);
@@ -33,7 +33,7 @@ window.onload = function() {
   });
 
   //music ended
-  socket.emit("songFinished");
+  // socket.emit("songFinished");
   socket.on("songFinished", function(songFinished) {
     console.log("boardThree song : " + songFinished);
     songFinishedBoardCheck = songFinished;

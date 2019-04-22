@@ -5,16 +5,16 @@ let songFinishedBoardCheck;
 
 // background music
 window.onload = function() {
-  console.log("welcome btn log1 : " + window.welcomeBtnClicked);
-  window.welcomeBtnClicked = false;
+  console.log("welcome window.btn log1 : " + window.welcomeBtnClicked);
+  // window.welcomeBtnClicked = false;
 
-  if (window.welcomeBtnClicked == false) {
-    window.welcomeBtnClicked = false;
-    document.getElementById("boardOneBody").style.visibility = "hidden";
-  } else {
-    window.welcomeBtnClicked = true;
-    document.getElementById("boardOneBody").style.visibility = "visible";
-  }
+  // if (window.welcomeBtnClicked == false) {
+  //   window.welcomeBtnClicked = false;
+  //   document.getElementById("boardOneBody").style.visibility = "hidden";
+  // } else {
+  //   window.welcomeBtnClicked = true;
+  //   document.getElementById("boardOneBody").style.visibility = "visible";
+  // }
   // console.log(window.welcomeBtnClicked);
   // if (window.welcomeBtnClicked == false) {
   //   document.getElementById("boardOneBody").style.visibility = "hidden";
@@ -23,7 +23,7 @@ window.onload = function() {
   //   document.getElementById("my_audio").play();
   // }
   //welcome btn pressed
-  socket.emit("welcomeBtnClicked");
+  // socket.emit("welcomeBtnClicked");
   socket.on("welcomeBtnClicked", function(welcomeBtnClicked) {
     console.log("boardOne : " + welcomeBtnClicked);
     welcomeBtnClickedBoardCheck = welcomeBtnClicked;
@@ -37,7 +37,7 @@ window.onload = function() {
     }
   });
 
-  socket.emit("songFinished");
+  // socket.emit("songFinished");
   socket.on("songFinished", function(songFinished) {
     console.log("boardOne song : " + songFinished);
     songFinishedBoardCheck = songFinished;
