@@ -5,6 +5,8 @@ let songFinishedBoardCheck;
 
 //
 window.onload = function() {
+  //prevent right click
+  document.addEventListener("contextmenu", event => event.preventDefault());
   //welcome button clicked
   // socket.emit("welcomeBtnClicked");
   socket.on("welcomeBtnClicked", function(welcomeBtnClicked) {

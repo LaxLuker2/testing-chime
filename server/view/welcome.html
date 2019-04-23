@@ -29,6 +29,11 @@
       let welcomeBtnClicked = false;
       let songFinished = false;
       window.onload = function() {
+        //prevent right click
+        document.addEventListener("contextmenu", event =>
+          event.preventDefault()
+        );
+        //sockets
         socket.emit("welcomeBtnClicked", welcomeBtnClicked);
         socket.on("welcomeBtnClicked", function(welcomeBtnClick) {
           console.log("welcomeBtnClick : " + welcomeBtnClick);

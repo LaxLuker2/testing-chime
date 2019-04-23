@@ -4,6 +4,8 @@ const socket = io();
 let songFinishedBoardCheck;
 
 window.onload = function() {
+  //prevent right click
+  document.addEventListener("contextmenu", event => event.preventDefault());
   document.getElementById("my_audio").play();
 };
 
